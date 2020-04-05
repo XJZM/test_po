@@ -1,0 +1,14 @@
+#假设这种写法是对应用户名和用户密码当，当时间长了以后，再回过头来要修改这个数据的时候，因为是列表，所以会分不清哪个是用户名，哪个是密码
+#test_input_search:
+#  - "xiaoming"
+#  - "xiaoming123"
+
+#改进：把列表写成字典模式，有了key就可以辨别数据了。但是@pytest.mark.parametrize()需要的是列表的格式，所以需要自己在写一个函数去处理
+#从而把字典转换为列表
+test_input_search:
+  test_input1:
+    username: "xiaoming"
+    password: "xiaoming123"
+  test_input2:
+    username: "xiaohong"
+    password: "xiaohong"

@@ -1,0 +1,3 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Sun Apr 05 11:11:39 CST 2020","Sun Apr 05 11:11:46 CST 2020","7164","scripts","test_display","TestDisplay","","","test_input_search[dict_data0]",""
+"passed","Sun Apr 05 11:11:59 CST 2020","Sun Apr 05 11:12:06 CST 2020","6546","scripts","test_display","TestDisplay","","","test_input_search[dict_data1]",""
