@@ -6,8 +6,15 @@ import yaml
 
 def analyses_file(key):
     """
-    把test脚本中的analyses_file_with_key()方法的功能合并该文件中，并且动态获取上一个调用我的方法，也就是测试脚本本身。
-    然后通过处理动态获得对应测试脚本的yaml文件名，这样就不用每次都去传了
+    思考一个问题，这个file_name每次都要手动传入，很麻烦，我们能不能通过某些方法自动的获取到呢？
+    新思路：
+        通过stack()这个方法获取从本文件开始层层调用analyses_file()的所有方法，那么自然就能获取是谁在调用analyses_file()
+        上一个调用analyses_file()方法的肯定是某个测试脚本，而每一个测试脚本只对应一个file_nama!
+        那么只要拿到那个掉用analyses_file()的测试脚本的名字，再和data拼接一下，就可以动态的获得file_name了！
+    用了这个思路后，test脚本中的analyses_file_with_key()方法就可以舍弃了。
+    把test脚本中的analyses_file_with_key()方法的功能合并到解析yaml文件的方法中
+    这样，用文件名把yaml文件解析成字典格式，用key拿到某个脚本需要的值
+    :param file_name: data目录下yaml文件的文件名
     :param key: 字典的key，具体查阅对应yaml文件的结构，确定要哪个key的值
     :return:
     """
