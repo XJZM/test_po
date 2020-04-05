@@ -19,7 +19,11 @@ def analyses_file_with_key(key):
     :param key: 传入对应文件对应某条测试用例的key
     :return: 得到一个字典嵌套字典格式的数据
     """
-    return analyses_file("setting_data", key)
+    file_dict = analyses_file("setting_data")[key]
+    file_single_list = list()
+    for i in file_dict.values():
+        file_single_list.append(i)
+    return file_single_list
 
 
 class TestDisplay:

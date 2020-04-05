@@ -5,6 +5,7 @@
 
 #改进：把列表写成字典模式，有了key就可以辨别数据了。但是@pytest.mark.parametrize()需要的是列表的格式，所以需要自己在写一个函数去处理
 #从而把字典转换为列表
+#test_input_search为对应的测试用例的名字
 test_input_search:
   test_input1:
     username: "xiaoming"

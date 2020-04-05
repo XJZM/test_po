@@ -21,6 +21,7 @@ def analyses_file(file_name, key):
             for i in file_dict.values():
                 file_single_list.append(i)
             return file_single_list
+
     except Exception as e:
         print(e)
 
