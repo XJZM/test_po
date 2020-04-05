@@ -13,7 +13,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/test_display.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="198">
@@ -52,11 +52,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts_lenrn/test_allure1.0.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="66" column="31" selection-start-line="66" selection-start-column="31" selection-end-line="66" selection-end-column="31" />
+            <state relative-caret-position="262">
+              <caret line="74" column="50" selection-start-line="74" selection-start-column="43" selection-end-line="74" selection-end-column="50" />
               <folding>
                 <element signature="e#55#68#0" expanded="true" />
               </folding>
@@ -184,10 +184,10 @@
         <option value="$PROJECT_DIR$/base/base_demo.py" />
         <option value="$PROJECT_DIR$/pytest.ini" />
         <option value="$PROJECT_DIR$/scripts/test_allure_1.1.py" />
-        <option value="$PROJECT_DIR$/scripts_lenrn/test_allure1.0.py" />
         <option value="$PROJECT_DIR$/page/setting_page.py" />
         <option value="$PROJECT_DIR$/scripts/test_display.py" />
         <option value="$PROJECT_DIR$/scripts/test_allure.py" />
+        <option value="$PROJECT_DIR$/scripts_lenrn/test_allure1.0.py" />
       </list>
     </option>
   </component>
@@ -437,9 +437,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="46" y="23" width="1394" height="877" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49809885" visible="true" weight="0.24981792" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49809885" visible="true" weight="0.24981792" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.50190115" side_tool="true" weight="0.24981792" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -450,7 +449,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3299363" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.38343948" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.38343948" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5003642" side_tool="true" weight="0.3299363" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.3299363" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -755,16 +754,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts_lenrn/test_allure1.0.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="66" column="31" selection-start-line="66" selection-start-column="31" selection-end-line="66" selection-end-column="31" />
-          <folding>
-            <element signature="e#55#68#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/page/setting_page.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
@@ -786,6 +775,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="40" column="4" lean-forward="true" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="52" />
+          <folding>
+            <element signature="e#55#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts_lenrn/test_allure1.0.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="74" column="50" selection-start-line="74" selection-start-column="43" selection-end-line="74" selection-end-column="50" />
           <folding>
             <element signature="e#55#68#0" expanded="true" />
           </folding>
