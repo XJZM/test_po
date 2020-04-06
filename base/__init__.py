@@ -5,4 +5,4 @@ import os, sys
 sys.path.append(os.getcwd())
 from .base_driver import init_driver
 from .base_action import BaseAction
-from .base_analyses import analyses_file
+from .base_analyses import analyses_file_get_data
