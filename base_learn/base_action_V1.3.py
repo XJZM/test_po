@@ -5,13 +5,17 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 class BaseAction:
     """
-    公共方法
+    V1.3:
+        1.添加is_toast_exist方法，判断toast是否存在
+        2.添加get_feature_key_t_or_f方法，获取某个元素的某个属性是true还是false
+        2.添加is_feature_exist方法，判断某个元素是否存在
     """
     def __init__(self, driver):
         self.driver = driver
 
     def find_element(self, feature, timeout=5.0, poll_frequency=1.0):
         """
+        对于时间设置为浮点数的原因：由于find_toast方法寻找频率时间较短，并且为浮点数，为了统一，就把这个方法的时间也默认为浮点数了
         根据特征，找元素
         :param feature: 特征，即定位方式，例如：
                 (By.ID, "android:id/search_src_text")
@@ -50,6 +54,7 @@ class BaseAction:
 
     def find_toast(self, feature):
         """
+        对于poll_frequency频率默认为0.1秒的原因：toast持续时间短，有时候由于网络与设备配置问题的卡顿，如果设置时间过长会导致找不到
         预期要获得的toast的文字
         :param feature: 预期要获得的toast的文字
         :return:

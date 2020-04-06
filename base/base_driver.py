@@ -12,16 +12,16 @@ def init_driver():
     desired_caps['deviceName'] = '192.168.56.107:5555'
 
     # 设置
-    # desired_caps['appPackage'] = 'com.android.settings'
-    # desired_caps['appActivity'] = '.Settings'
+    desired_caps['appPackage'] = 'com.android.settings'
+    desired_caps['appActivity'] = '.Settings'
 
     # 设置锁屏
     # desired_caps['appPackage'] = 'com.android.settings'
     # desired_caps['appActivity'] = '.ChooseLockPattern'
 
     # 文件管理器
-    desired_caps['appPackage'] = 'com.cyanogenmod.filemanager'
-    desired_caps['appActivity'] = '.activities.NavigationActivity'
+    # desired_caps['appPackage'] = 'com.cyanogenmod.filemanager'
+    # desired_caps['appActivity'] = '.activities.NavigationActivity'
 
     # 解决输入中文
     desired_caps['unicodeKeyboard'] = True

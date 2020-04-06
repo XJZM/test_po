@@ -51,3 +51,7 @@ class SettingPage(BaseAction):
             self.input(self.input_box, content)
         except Exception as e:
             print("报错：", e)
+
+    @allure.step('判断显示按钮是否可操作')
+    def is_display_button_enabled(self):
+        return self.get_feature_key_t_or_f(self.display_button)
