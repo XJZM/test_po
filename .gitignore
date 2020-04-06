@@ -105,6 +105,7 @@ ipython_config.py
 
 .pytest_cache
 .idea
+__pycache__
 __pycache__/
 # pyenv
 .python-version
