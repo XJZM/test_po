@@ -15,6 +15,7 @@ class SettingPage(BaseAction):
     wlan_button = By.XPATH, "text,WLAN"
     more_button = By.XPATH, "text,更多"
     memory_button = By.XPATH, "text,存储"
+    elements = (By.ID, "com.android.settings:id/title")
     # init方法可以省略不写，因为父类已经有init方法类
     # def __init__(self, driver):
     #     super().__init__(driver)
@@ -22,7 +23,8 @@ class SettingPage(BaseAction):
     @allure.step('点击显示按钮')
     def click_display(self):
         allure.attach('点击显示按钮', '我是点击显示按钮的描述～～～')
-        self.click(self.display_button)
+        # self.click(self.display_button)
+        self.swipe_screen(self.elements, "关于手机")
 
     @allure.step('点击搜索按钮')
     def click_search(self):

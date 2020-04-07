@@ -10,6 +10,72 @@ class BaseAction:
     def __init__(self, driver):
         self.driver = driver
 
+    def swipe_screen(self, feature, want_to_find_text, direction="down_to_up"):
+        """
+        :param direction: 默认为从下到上进行滑动，其他方向：
+                    从上到下：up_to_down
+                    从左到右：left_to_right
+                    从右到左：right_to_left
+        :return:
+        """
+        # 定义一个用一个屏幕所有元素的text拼接的字符串，默认为空
+        # 定义在外层循环外，确保刚开始的值为空，当开始循环后，每一次外层循环完，都由new_elements_text提供值
+        old_elements_text = ""
+
+        # 外层循环：确保获取一个屏幕的元素后，没有发现要找的元素，能继续滑动屏幕，获取下一个屏幕的元素
+        while True:
+
+            # 定义另一个用当前屏幕所有元素的text拼接的字符串，默认为空
+            # 定义在外层循环里，确保拼接完当前屏幕所有元素的text后，下一次循环滑动后的另外一个屏幕时为空
+            # 然后重新拼接那个屏幕所有元素的text，再与old_elements_text对比
+            new_elements_text = ""
+
+            # 调用自己封装的find_elements()，寻找一组元素
+            elements = self.find_elements(feature)
+
+            # 内层循环：确保当获取到一个屏幕的元素后，对当前屏幕的所有元素逐个遍历，寻找要找的那个元素
+            for element in elements:
+                print("当前屏幕所有元素的text的值有：", element.text)
+                # 内层循环每循环一次，都把循环到的元素的text以+=的方式复制给new_elements_text
+                new_elements_text += element.text
+                if want_to_find_text == element.text:
+                    # 根据业务需求来处理找到后的元素，具体要怎么处理。目前这点暂时写为找到后点击
+                    element.click()
+                    return
+            print("当前屏幕所有元素的text拼接后的值为：", new_elements_text)
+
+            # 如果相等，说明已经滑到底了，既然已经滑到底了，就没必要继续滑了，直接退出方法
+            if old_elements_text == new_elements_text:
+                return
+            # 如果不相等，就把当前屏幕获得的元素的text也就是new_elements_text全部复制给old_elements_text
+            else:
+                old_elements_text = new_elements_text
+
+            # 内层循环完如果没有找到要找到元素，那么就滑动屏幕
+            swipe_time = 5000
+            screen_width = self.driver.get_window_size()["width"]
+            screen_height = self.driver.get_window_size()["height"]
+            start_x, start_y, end_x, end_y = 0, 0, 0, 0
+            if direction in ["down_to_up", "up_to_down"]:
+                start_x = screen_width * 0.5
+                start_y = screen_height * 0.75
+                end_x = screen_width * 0.5
+                end_y = screen_width * 0.25
+
+            if direction in ["left_to_right", "right_to_left"]:
+                start_x = screen_width * 0.25
+                start_y = screen_height * 0.5
+                end_x = screen_width * 0.75
+                end_y = screen_width * 0.5
+
+            # 滑动屏幕
+            if direction in ["down_to_up", "left_to_right"]:
+                self.driver.swipe(start_x, start_y, end_x, end_y, swipe_time)
+            elif direction in ["up_to_down", "right_to_left"]:
+                self.driver.swipe(end_x, end_y, start_x, start_y, swipe_time)
+            else:
+                raise Exception("请输入正确的滑动方向，例如从上到下为：'up_to_down'。其他方向同理")
+
     def find_element(self, feature, timeout=5.0, poll_frequency=1.0):
         """
         根据特征，找元素
