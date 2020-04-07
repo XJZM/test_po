@@ -4,10 +4,9 @@ import inspect
 import yaml
 
 
-def analyses_file_get_data(key):
+def analyses_file(key):
     """
-    把test脚本中的analyses_file_with_key()方法的功能合并该文件中，并且动态获取上一个调用我的方法，也就是测试脚本本身。
-    然后通过处理动态获得对应测试脚本的yaml文件名，这样就不用每次都去传了
+    v1.3: 解决当测试脚本为test_demo_demo_demo.py时，对于测试数据名为demo_demo_demo_data.yml时，此方法无法正常处理的问题
     :param key: 字典的key，具体查阅对应yaml文件的结构，确定要哪个key的值
     :return:
     """
@@ -61,4 +60,4 @@ def analyses_file_get_data(key):
 
 if __name__ == '__main__':
     # 如果在当前文件调用的话，因为上个人调用，其实就是自己调用自己，所以输出的值是：analyses_data，但是并没有这个名字的文件
-    print(analyses_file_get_data("test_input_search"))
+    print(analyses_file("test_input_search"))

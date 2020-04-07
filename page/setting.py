@@ -23,8 +23,8 @@ class SettingPage(BaseAction):
     @allure.step('点击显示按钮')
     def click_display(self):
         allure.attach('点击显示按钮', '我是点击显示按钮的描述～～～')
-        # self.click(self.display_button)
-        self.swipe_screen(self.elements, "关于手机")
+        self.click(self.display_button)
+        # self.swipe_screen(self.elements, "关于手机")
 
     @allure.step('点击搜索按钮')
     def click_search(self):
