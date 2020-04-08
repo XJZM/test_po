@@ -25,7 +25,7 @@ class Page:
         # 第一个调用stack()这个方法的方法就是本方法page_object，调用page_object()的方法即为第二个，也就是下标为1的方法，
         # 也就是对应的某个页面，例如setting
         method_name = inspect.stack()[1].function
-        print("method_name", method_name)
+        print("method_name: ", method_name)
 
         # 把找到的method_name用下划线进行分割，获得一个列表
         method_name_list = method_name.split("_")
@@ -38,7 +38,7 @@ class Page:
         # 最后与字符串Page拼接完整的页面类名
         class_name += "Page"
 
-        # 利用exec()方法运行导入语句，即每次要return某个类时，就先导入这个类
+        # 利用exec()方法运行导入语句，即每次要return某个页面类时，需要在return前导入这个页面类类
         exec("from page import %s" % class_name)
 
         # 利用eval()方法去执行

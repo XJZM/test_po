@@ -29,13 +29,13 @@ class TestSetting:
     def setup(self):
         self.driver = init_driver()
         self.page = Page(self.driver)
-    #
-    # def test_click_display(self):
-    #     print("显示按钮是否可见：", self.page.setting.is_display_button_enabled())
-    #     self.page.setting.click_display()
+
+    def test_click_display(self):
+        print("显示按钮是否可见：", self.page.setting.is_display_button_enabled())
+        self.page.setting.click_display()
 
     # @allure.severity(allure.severity_level.CRITICAL)
-    # @pytest.mark.parametrize("dict_data", analyses_file_with_key("test_input_search"))
+    # @pytest.mark.parametrize("dict_data", analyses_file_get_data("test_input_search"))
     # def test_input_search(self, dict_data):
     #     username = dict_data["username"]
     #     password = dict_data["password"]
@@ -43,8 +43,8 @@ class TestSetting:
     #     self.page.setting.click_search()
     #     self.page.setting.input_search(username)
     #     assert 1
-
-    @pytest.mark.parametrize("dict_data", analyses_file_get_data("test_input_search"))
-    def test_demo(self, dict_data):
-        print(dict_data)
-        assert 1
+    #
+    # @pytest.mark.parametrize("dict_data", analyses_file_get_data("test_input_search"))
+    # def test_demo(self, dict_data):
+    #     print(dict_data)
+    #     assert 1
