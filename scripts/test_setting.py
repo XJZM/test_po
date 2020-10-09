@@ -34,17 +34,17 @@ class TestSetting:
         print("显示按钮是否可见：", self.page.setting.is_display_button_enabled())
         self.page.setting.click_display()
 
-    # @allure.severity(allure.severity_level.CRITICAL)
-    # @pytest.mark.parametrize("dict_data", analyses_file_get_data("test_input_search"))
-    # def test_input_search(self, dict_data):
-    #     username = dict_data["username"]
-    #     password = dict_data["password"]
-    #     print(password)
-    #     self.page.setting.click_search()
-    #     self.page.setting.input_search(username)
-    #     assert 1
-    #
-    # @pytest.mark.parametrize("dict_data", analyses_file_get_data("test_input_search"))
-    # def test_demo(self, dict_data):
-    #     print(dict_data)
-    #     assert 1
+    @allure.severity(allure.severity_level.CRITICAL)
+    @pytest.mark.parametrize("dict_data", analyses_file_get_data("test_input_search"))
+    def test_input_search(self, dict_data):
+        username = dict_data["username"]
+        password = dict_data["password"]
+        print(password)
+        self.page.setting.click_search()
+        self.page.setting.input_search(username)
+        assert 1
+
+    @pytest.mark.parametrize("dict_data", analyses_file_get_data("test_input_search"))
+    def test_demo(self, dict_data):
+        print(dict_data)
+        assert 1
